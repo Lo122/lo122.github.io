@@ -80,6 +80,13 @@ button { font: inherit; }
 
 .section-header h1 { margin: 0; font: inherit; font-weight: 400; color: var(--text); }
 
+.collection-keywords {
+  margin: 0 0 var(--gap);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -93,6 +100,20 @@ button { font: inherit; }
   aspect-ratio: 4 / 3;
   background: #ddd;
   transition: opacity 180ms ease;
+}
+
+.project-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #e2e2de;
+}
+
+.project-thumb.contain {
+  object-fit: contain;
+  padding: clamp(8px, 1vw, 16px);
+  background: #fff;
 }
 
 .placeholder-light { background: #e7e7e2; }
@@ -117,7 +138,7 @@ button { font: inherit; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3px;
+  gap: 10px;
   margin-top: clamp(48px, 10vh, 110px);
   font-size: 16px;
 }
@@ -144,6 +165,9 @@ button { font: inherit; }
 .project-facts dd { margin: 0; }
 
 .project-story { display: grid; gap: var(--gap); }
+.story-media { display: block; width: 100%; height: auto; background: #e2e2de; }
+.story-media.contain { object-fit: contain; background: #fff; }
+.story-pair .story-media { height: 100%; object-fit: cover; }
 .story-image { min-height: 260px; aspect-ratio: 16 / 10; background: #deded9; }
 .story-image.tall { aspect-ratio: 4 / 5; }
 .story-image.dark { background: #363636; }
