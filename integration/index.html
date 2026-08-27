@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bentham&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
@@ -15,7 +17,7 @@
       <aside class="sidebar">
         <section class="sidebar-content">
           <a class="identity" href="../">Yang Luo</a>
-          <h1 class="page-title" style="margin-top:clamp(48px,10vh,110px)">Integration</h1>
+
           <div class="index-list">
             <a href="./thesis-project/">Thesis Project</a>
             <a href="./cvae-truss-morphologies/">CVAE Truss Morphologies</a>
@@ -27,21 +29,38 @@
           </div>
         </section>
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="../about/">About</a>
+          <a href="../">About</a>
+          <a href="../resume/">Resume</a>
           <a href="../design/">Design</a>
           <a href="./" aria-current="page">Integration</a>
         </nav>
       </aside>
       <section class="page-main">
-        <p class="collection-keywords">Generative AI &middot; HRI &middot; Computer Vision &middot; Reinforcement Learning &middot; Robotics</p>
-        <div class="project-grid">
-          <a class="project-card" href="./thesis-project/"><span class="placeholder placeholder-dark"></span><span class="project-meta"><span>Thesis Project</span><span>2026</span></span></a>
-          <a class="project-card" href="./cvae-truss-morphologies/"><img class="project-thumb" src="../assets/integration/cvae-truss-morphologies/images/truss_main.jpg" alt="CVAE-generated truss morphologies"><span class="project-meta"><span>CVAE Truss Morphologies</span><span>2025</span></span></a>
-          <a class="project-card" href="./gen-garden/"><img class="project-thumb" src="../assets/integration/gen-garden/images/gen_main.jpg" alt="Gen Garden installation"><span class="project-meta"><span>Gen Garden</span><span>2026</span></span></a>
-          <a class="project-card" href="./tic-tac-toe/"><img class="project-thumb" src="../assets/integration/tic-tac-toe/images/tic_main.jpg" alt="Robot playing Tic Tac Toe"><span class="project-meta"><span>Tic Tac Toe</span><span>2026</span></span></a>
-          <a class="project-card" href="./light-sculpture/"><img class="project-thumb" src="../assets/integration/light-sculpture/images/light_main.jpg" alt="Interactive light sculpture result"><span class="project-meta"><span>Light Sculpture</span><span>2025</span></span></a>
-          <a class="project-card" href="./emergent-ecology/"><img class="project-thumb" src="../assets/integration/emergent-ecology/images/pps_main.jpg" alt="Wolf sheep grass ecosystem simulation"><span class="project-meta"><span>Predator Prey System</span><span>2025</span></span></a>
-          <a class="project-card" href="./fabrication-studies/"><img class="project-thumb" src="../assets/integration/fabrication-studies/images/wave/wave_main.jpg" alt="Robotic PETG printing study"><span class="project-meta"><span>Fabrication Studies</span><span>2020-2024</span></span></a>
+        <div class="collection-groups">
+          <section class="collection-group">
+            <p class="collection-keywords">HRI</p>
+            <div class="project-grid">
+              <a class="project-card" href="./thesis-project/"><img class="project-thumb" src="../assets/integration/thesis-project/images/thesis_concept.png" alt="Thesis Project"></span><span class="project-meta"><span>Thesis Project</span></a>
+              <a class="project-card" href="./gen-garden/"><img class="project-thumb" src="../assets/integration/gen-garden/images/gen_main.jpg" alt="Gen Garden installation"><span class="project-meta"><span>Gen Garden</span></a>
+              <a class="project-card" href="./tic-tac-toe/"><img class="project-thumb" src="../assets/integration/tic-tac-toe/images/tic_main.jpg" alt="Robot playing Tic Tac Toe"><span class="project-meta"><span>Tic Tac Toe</span></a>
+              <a class="project-card" href="./light-sculpture/"><img class="project-thumb" src="../assets/integration/light-sculpture/images/light_main.jpg" alt="Interactive light sculpture result"><span class="project-meta"><span>Light Sculpture</span></a>
+            </div>
+          </section>
+
+          <section class="collection-group">
+            <p class="collection-keywords">ML Exploration</p>
+            <div class="project-grid">
+              <a class="project-card" href="./cvae-truss-morphologies/"><img class="project-thumb" src="../assets/integration/cvae-truss-morphologies/images/truss_main.jpg" alt="CVAE-generated truss morphologies"><span class="project-meta"><span>CVAE Truss Morphologies</span></a>
+              <a class="project-card" href="./emergent-ecology/"><img class="project-thumb" src="../assets/integration/emergent-ecology/images/pps_main.jpg" alt="Wolf sheep grass ecosystem simulation"><span class="project-meta"><span>Predator Prey System</span></a>
+            </div>
+          </section>
+
+          <section class="collection-group">
+            <p class="collection-keywords">Fabrication</p>
+            <div class="project-grid">
+              <a class="project-card" href="./fabrication-studies/"><img class="project-thumb" src="../assets/integration/fabrication-studies/images/3d metal printing/metal.jpg" alt="Robotic fabrication study"><span class="project-meta"><span>Fabrication Studies</span></a>
+            </div>
+          </section>
         </div>
       </section>
     </main>
