@@ -16,7 +16,7 @@
           <a class="back-link" href="../">&larr; <span>Integration</span>
           </a>
           <h1 class="page-title">Gen Garden</h1>
-          <p class="project-summary">A concise overview of the research question, approach, system, and outcome.</p>
+          <p class="project-summary">Our aim is to create a Zen garden through interaction between the human, multi-agent AI system, and a robot.</p>
           <dl class="project-facts">
             <dt>Year</dt>
             <dd>2025</dd>
@@ -39,23 +39,34 @@
       </aside>
       <article class="project-story">
         <img class="story-media" src="../../assets/integration/gen-garden/images/gen_concept.png" alt="Gen Garden concept">
-        <p class="story-caption">The iterative cocreation process of the robot, human, and AI agent.</p>
+        <p class="story-caption">For our Zen garden, each interaction round starts with the human freely placing rocks in the sand pit. The AI then captures the updated arrangement through the camera and generates a new raking pattern in response. This pattern is sent to the robot, which uses a rake to draw it into the sand. After that, the human can place more rocks on top of the result, triggering the next design iteration.<br><br>
+        </p>
         <img class="story-media" src="../../assets/integration/gen-garden/images/gen_workflow.png" alt="Gen Garden workflow">
-        <p class="story-caption">The workflow of the Gen Garden system, including the generation and evaluation agents.</p>
+        <p class="story-caption">Building on this interaction loop, our main challenges are: 1. how to make the communication between human and robot/AI fluent; 2. how to ensure the robot has accurately executed the assigned task.<br><br>
+          For the first challenge, we employed AR headset to visualize and send signals for the human.<br><br>
+          For the second, we implemented an AI self-evaluation step resulting in necessary corrective actions.
+        </p>
         <img class="story-media" src="../../assets/integration/gen-garden/images/gen_platform.png" alt="Gen Garden workflow">
-        <p class="story-caption">The platform architecture of the Gen Garden system.</p>
-        <img class="story-media" src="../../assets/integration/gen-garden/images/gen_communication.png" alt="Gen Garden communication structure">
-        <p class="story-caption">The communication structure between the robot, human, and AI agent.</p>
 
-        <video class="story-media" controls playsinline preload="metadata" poster="../../assets/integration/gen-garden/images/gen_communication.png">
+        <img class="story-media" src="../../assets/integration/gen-garden/images/gen_communication.png" alt="Gen Garden communication structure">
+        <p class="story-caption">A key part of our work was building a reliable information exchange pipeline between the reality, python program, and grasshopper.<br><br>
+        In total we have 4 types of communication, and for each communication link in the workflow, we define a specific method, device and variable name.
+        </p>
+
+        <video class="story-media" controls playsinline preload="metadata" >
           <source src="../../assets/integration/gen-garden/videos/gen_communication.mp4" type="video/mp4">
           Your browser does not support embedded video.
         </video>
-        <p class="story-caption">Gen Garden system communication in digital simulation.</p>
-
+        <p class="story-caption">In our project, the agent's settings consist of a camera, UR robot, and AI.<br><br>
+        Our agent completes a full feedback loop. It observes the scene with a camera, designs with AI, executes through the robot, and then self-evaluates using vision again.
+        </p>
         <img class="story-media" src="../../assets/integration/gen-garden/images/gen_genagent.png" alt="Gen Garden generation agent">
         <img class="story-media" src="../../assets/integration/gen-garden/images/gen_evaagent.png" alt="Gen Garden evaluation agent">
-        <p class="story-caption">The generation and evaluation agents within the Gen Garden system.</p>
+        <p class="story-caption">The agent is capable of 3 types of generation, based on Gemini's "gemini-2.5-flash-image", it can: <br><br>
+          1. generate image out of the given prompt and a input image;<br><br>
+          2. detect the raking patterns and isolate them as red curves, then generating another image only showing the  red curves which facilitates the OpenCV detection in the following steps.<br><br>
+          3. evaluate the robot's completion quality by taking one captured image, one generated image, a metrics calculated by skimage, and a given prompt.
+        </p>
 
         <div class="story-pair">
           <img class="story-media" src="../../assets/integration/gen-garden/images/gen1.jpg" alt="Gen Garden physical installation">
@@ -68,9 +79,9 @@
               <footer class="project-credits">
           <dl>
             <dt>Team</dt>
-            <dd>Yang Luo; Priyansh Jain; Benan A</dd>
-            <dt>Acknowledgements</dt>
-            <dd>Thanks to </dd>
+            <dd>Yang Luo, Priyansh Jain, Benan Ataulusoy</dd>
+            <dt>Tutors</dt>
+            <dd>X. Yang , F. Kannenberg, S. Leder, E. S. Sahin, L. Siriwardena, L. Skoury, S. Slezak,and T. Schwinn</dd>
           </dl>
         </footer></article>
     </main>
