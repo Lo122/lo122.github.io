@@ -16,11 +16,6 @@ const selectedWorkImages = [
     href: "./integration/cvae-truss-morphologies/",
   },
   {
-    src: "./assets/integration/tic-tac-toe/images/tic_main.jpg",
-    alt: "Robot playing Tic Tac Toe",
-    href: "./integration/tic-tac-toe/",
-  },
-  {
     src: "./assets/integration/light-sculpture/images/light_main.jpg",
     alt: "Interactive light sculpture",
     href: "./integration/light-sculpture/",
