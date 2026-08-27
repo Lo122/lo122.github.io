@@ -17,16 +17,18 @@
           <a class="back-link" href="../">&larr; <span>Design</span>
           </a>
           <h1 class="page-title">Plan Navigator</h1>
-          <p class="project-summary">A concise project introduction will describe the context, intent, and outcome of the work.</p>
+          <p class="project-summary">An AI assisted tool for recording, planning, and evaluating weekly tasks of long-term projects, helping users to navigate their workflows among changing situations.</p>
           <dl class="project-facts">
             <dt>Year</dt>
             <dd>2026</dd>
             <dt>Role</dt>
             <dd>Designer</dd>
             <dt>Type</dt>
-            <dd>Interaction design</dd>
+            <dd>AI Product</dd>
+            <dt>Tech Stack</dt>
+            <dd>LLM &middot; RAG &middot; Python</dd>
             <dt>Keywords</dt>
-            <dd>RAG &middot; LLM Planning &middot; Human&ndash;AI Interaction</dd>
+            <dd>UI Design &middot; AI Assisted Coding</dd>
           </dl>
 
         </section>
@@ -38,7 +40,26 @@
       </aside>
       <article class="project-story">
         <img class="story-media" src="../../assets/design/plan-navigator/gifs/plan_gif.gif" alt="Plan Navigator interaction demonstration">
-        <p class="story-caption">Main planning workspace.</p>
+        <p class="story-caption">When I was doing my master thesis, we always faced the challenge of keeping track of our progress and adjusting our plans as new information emerged.<br>
+          This remeinds of some other similar situations where we need to constantly update our plans and prioritities based on the latest information, while also keeping the big picture in mind.<br>
+          To address this challenge, I designed a tool called Plan Navigator to help the users to navigator their workflows among changing situations.<br>
+        </p>
+
+        <p class="story-caption">First, user should initialize the project by setting up its long-term and general goal.<br>
+          For instance, the long-term goal of a master thesis project could be "Finish master thesis project", which is summarized from the project description by AI, and the deadline could be "2026-10-30".<br>
+        </p>
+
+        <p class="story-caption">Every week, users can what they have achieved, what feedback they have received, and what blockers they have encountered.     
+        </p>
+
+        <p class="story-caption">After saving the weekly updates, the tool will analyze the progress and generate the top3 prioritities and risks for the next week, which will be presented on the next week's planning page.<br>
+        </p>
+        
+        <p class="story-caption">Since the duration of the project could be long, thus the user input will be accumulated much over time.<br>
+          LLM is used to compress the weekly updates and recording key pivots if exist.<br>
+          RAG is used to retrieve relevant information for the next week's planning.<br>
+        </p>
+        
       </article>
     </main>
   </body>
