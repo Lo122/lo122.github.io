@@ -28,6 +28,18 @@ const selectedWorkImages = [
 ];
 
 const selectedWorkSlots = [...document.querySelectorAll(".selected-image")];
+const autoplayDelay = 5000;
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const autoplayStates = new Map(
+  selectedWorkSlots.map((slot) => [
+    slot,
+    {
+      timer: null,
+      isVisible: typeof IntersectionObserver === "undefined",
+      isInteracting: false,
+    },
+  ]),
+);
 
 selectedWorkImages.forEach(({ src }) => {
   const preload = new Image();
@@ -113,8 +125,104 @@ async function switchSelectedImage(slot) {
   }
 }
 
+function stopAutoplay(slot) {
+  const state = autoplayStates.get(slot);
+  if (!state || state.timer === null) return;
+
+  window.clearTimeout(state.timer);
+  state.timer = null;
+}
+
+function canAutoplay(slot) {
+  const state = autoplayStates.get(slot);
+  return (
+    state &&
+    !reducedMotionQuery.matches &&
+    !document.hidden &&
+    state.isVisible &&
+    !state.isInteracting
+  );
+}
+
+function scheduleAutoplay(slot) {
+  stopAutoplay(slot);
+  if (!canAutoplay(slot)) return;
+
+  const state = autoplayStates.get(slot);
+  state.timer = window.setTimeout(async () => {
+    state.timer = null;
+    await switchSelectedImage(slot);
+    scheduleAutoplay(slot);
+  }, autoplayDelay);
+}
+
+async function switchAndRestartAutoplay(slot) {
+  stopAutoplay(slot);
+  await switchSelectedImage(slot);
+  scheduleAutoplay(slot);
+}
+
 selectedWorkSlots.forEach((slot) => {
   slot.addEventListener("pointerleave", (event) => {
-    if (event.pointerType !== "touch") switchSelectedImage(slot);
+    if (event.pointerType === "touch") return;
+    switchAndRestartAutoplay(slot);
+  });
+
+  slot.addEventListener("pointerdown", (event) => {
+    if (event.pointerType !== "touch") return;
+    autoplayStates.get(slot).isInteracting = true;
+    stopAutoplay(slot);
+  });
+
+  const resumeAfterTouch = (event) => {
+    if (event.pointerType !== "touch") return;
+    autoplayStates.get(slot).isInteracting = false;
+    scheduleAutoplay(slot);
+  };
+
+  slot.addEventListener("pointerup", resumeAfterTouch);
+  slot.addEventListener("pointercancel", resumeAfterTouch);
+
+  slot.addEventListener("focus", () => {
+    autoplayStates.get(slot).isInteracting = true;
+    stopAutoplay(slot);
+  });
+
+  slot.addEventListener("blur", () => {
+    autoplayStates.get(slot).isInteracting = false;
+    scheduleAutoplay(slot);
+  });
+});
+
+if (typeof IntersectionObserver !== "undefined") {
+  const visibilityObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const state = autoplayStates.get(entry.target);
+        state.isVisible = entry.isIntersecting;
+
+        if (state.isVisible) scheduleAutoplay(entry.target);
+        else stopAutoplay(entry.target);
+      });
+    },
+    { threshold: 0.1 },
+  );
+
+  selectedWorkSlots.forEach((slot) => visibilityObserver.observe(slot));
+} else {
+  selectedWorkSlots.forEach(scheduleAutoplay);
+}
+
+document.addEventListener("visibilitychange", () => {
+  selectedWorkSlots.forEach((slot) => {
+    if (document.hidden) stopAutoplay(slot);
+    else scheduleAutoplay(slot);
+  });
+});
+
+reducedMotionQuery.addEventListener("change", () => {
+  selectedWorkSlots.forEach((slot) => {
+    if (reducedMotionQuery.matches) stopAutoplay(slot);
+    else scheduleAutoplay(slot);
   });
 });
