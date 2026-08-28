@@ -7,7 +7,7 @@ const selectedWorkImages = [
   
   {
     src: "./assets/design/fermat/images/fermat_main.jpg",
-    alt: "Fermat continuous filling paths",
+    alt: "Fermat Fulfilling Path continuous filling paths",
     href: "./design/fermat/",
   },
   {
