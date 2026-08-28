@@ -80,7 +80,7 @@ button { font: inherit; }
 .summary {
   max-width: 60ch;
   margin-block: auto;
-  font-size: clamp(12px, 2vw, 22px);
+  font-size: clamp(12px, 2vw, 20px);
   line-height: 1.45;
   letter-spacing: 0.04em;
   font-family: "Didact Gothic", sans-serif;
