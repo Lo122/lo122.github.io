@@ -1,5 +1,10 @@
 const selectedWorkImages = [
   {
+    src: "./assets/integration/thesis-project/images/thesis_concept.png",
+    alt: "Towards Proactive HRC thesis project concept",
+    href: "./integration/thesis-project/",
+  },
+  {
     src: "./assets/integration/gen-garden/images/gen_main.jpg",
     alt: "Gen Garden physical installation",
     href: "./integration/gen-garden/",
