@@ -44,9 +44,28 @@ button { font: inherit; }
   grid-template-rows: 7fr 1fr;
 }
 
-.sidebar-content { min-height: 0; overflow: auto; }
+.sidebar-content {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  margin-right: -12px;
+  padding-right: 12px;
+  margin-bottom: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--faint) 55%, transparent) transparent;
+}
+
+.sidebar-content::-webkit-scrollbar { width: 2px;  }
+.sidebar-content::-webkit-scrollbar-track { background: transparent; }
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--faint) 35%, transparent);
+  border-radius: 999px;
+}
+.sidebar-content::-webkit-scrollbar-thumb:hover { background: var(--faint); }
 
 .identity {
+  align-self: flex-start;
   display: inline-block;
   font-size: clamp(42px, 5vw, 70px);
   line-height: 1;
@@ -57,12 +76,10 @@ button { font: inherit; }
 
 .summary {
   max-width: 60ch;
+  margin-block: auto;
   font-size: clamp(12px, 2vw, 30px);
   line-height: 1.45;
-  position: absolute;
   letter-spacing: 0.04em;
-  top: 50%;
-  transform: translateY(-50%);
   font-family: "Didact Gothic", sans-serif;
   gap: 10px;
 }
@@ -101,6 +118,7 @@ button { font: inherit; }
   font-size: 26px;
   font-family: "inconsolata", monospace;
   font-weight: 400;
+  transform: translateX(-3px);
 }
 
 .site-nav a { color: var(--muted); transition: color 180ms ease; }
@@ -258,15 +276,12 @@ button { font: inherit; }
 
 
 .index-list {
-  position: absolute;
-  top: 40%;
-  transform: translateY(-60%);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
   letter-spacing: 0.04em;
-  margin-top: clamp(48px, 10vh, 110px);
+  margin-block: auto;
   font-size: clamp(12px, 2vw, 26px);
   font-family: "Didact Gothic", sans-serif;
 
@@ -327,6 +342,9 @@ button { font: inherit; }
 }
 .project-facts dt { color: var(--muted); }
 .project-facts dd { margin: 0; text-align: right; color: var(--faint); }
+
+.sidebar-content > .page-title { margin-top: auto; }
+.sidebar-content > .project-facts { margin-bottom: auto; }
 
 .project-credits {
   margin-top: clamp(10px, 10vw, 30px);
@@ -400,7 +418,7 @@ article.project-story:has(.project-credits) {
   (orientation: landscape) and (max-height: 600px) and (max-width: 1024px) {
   .site-shell { display: block; padding: 20px; }
   .sidebar { position: static; height: auto; display: block; margin-bottom: 64px; }
-  .sidebar-content { overflow: visible; }
+  .sidebar-content { overflow: visible; margin-right: 0; padding-right: 0; }
   .identity { font-size: clamp(42px, 14vw, 58px); }
   .site-nav {
     position: static;
@@ -414,8 +432,8 @@ article.project-story:has(.project-credits) {
   .summary {
     position: static;
     max-width: none;
-    margin-top: 36px;
-    font-size: clamp(12px, 6vw, 26px);
+    margin: 36px 0 0;
+    font-size: clamp(12px, 4vw, 26px);
     transform: none;
   }
 
@@ -431,7 +449,7 @@ article.project-story:has(.project-credits) {
   }
   .index-list {
     position: static;
-    margin-top: 24px;
+    margin: 24px 0 0;
     font-size: 22px;
     transform: none;
   }
@@ -449,9 +467,9 @@ article.project-story:has(.project-credits) {
   .sidebar:has(.sidebar-content > .back-link) .sidebar-content { display: contents; }
   .sidebar:has(.sidebar-content > .back-link) .back-link { order: 1; margin-bottom: 0; }
   .sidebar:has(.sidebar-content > .back-link) .site-nav { order: 2; }
-  .sidebar:has(.sidebar-content > .back-link) .page-title { order: 3; }
+  .sidebar:has(.sidebar-content > .back-link) .page-title { order: 3; margin-top: 48px; }
   .sidebar:has(.sidebar-content > .back-link) .project-summary { order: 4; }
-  .sidebar:has(.sidebar-content > .back-link) .project-facts { order: 5; }
+  .sidebar:has(.sidebar-content > .back-link) .project-facts { order: 5; margin-bottom: 0; }
   .page-title { margin-top: 48px; }
   .project-facts { grid-template-columns: 1fr; gap: 6px; }
   .project-facts dt:not(:first-child) { margin-top: 12px; }
@@ -473,7 +491,8 @@ article.project-story:has(.project-credits) {
 @media (max-width: 420px) {
   .site-nav { gap: 10px 14px; font-size: 20px; }
   .sidebar { margin-bottom: 48px; }
-  .page-title { margin-top: 36px; }
+  .page-title,
+  .sidebar:has(.sidebar-content > .back-link) .page-title { margin-top: 36px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
