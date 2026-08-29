@@ -26,6 +26,7 @@ a { color: inherit; text-decoration: none; }
 
 button { font: inherit; }
 
+
 .site-shell {
   display: grid;
   grid-template-columns: minmax(220px, 30vw) 1fr;
@@ -87,6 +88,12 @@ button { font: inherit; }
   gap: 8px;
 }
 
+.summary .accent-font {
+  font-family: "Inconsolata", monospace;
+  font-weight: 500;
+  font-size: clamp(14px, 2vw, 22px);
+  letter-spacing: 0;
+}
 .summary p { margin: 5px 0; }
 .summary p + p { margin-top: 1.45em; }
 
