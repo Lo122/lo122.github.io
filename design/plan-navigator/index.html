@@ -48,22 +48,20 @@
           To address this challenge, I designed a tool called Plan Navigator to help the users to navigator their workflows among changing situations.<br>
         </p>
 
+        <img class="story-media" src="../../assets/design/plan-navigator/images/plan_initialization.png" alt="Plan Navigator initialization page">
         <p class="story-caption">First, user should initialize the project by setting up its long-term and general goal.<br>
-          For instance, the long-term goal of a master thesis project could be "Finish master thesis project", which is summarized from the project description by AI, and the deadline could be "2026-10-30".<br>
+          Then, the user can start to record their weekly updates and plan for the next week.<br>
+          Every week, users can what they have achieved, what feedback they have received, and what blockers they have encountered.<br>
+          After saving the weekly updates, the tool will analyze the progress and generate the top3 prioritities and risks for the next week, which will be presented on the next week's planning page.<br>
         </p>
 
-        <p class="story-caption">Every week, users can what they have achieved, what feedback they have received, and what blockers they have encountered.     
+        <img class="story-media" src="../../assets/design/plan-navigator/images/plan_gen.png" alt="Plan Navigator generation page">
+        <p class="story-caption">Since the duration of the project could be long, thus the user input will be accumulated over time.
+          LLM is used to compress the weekly updates and recording key pivots if exist.
+          RAG is used to retrieve relevant information for the next week's planning.
         </p>
-
-        <p class="story-caption">After saving the weekly updates, the tool will analyze the progress and generate the top3 prioritities and risks for the next week, which will be presented on the next week's planning page.<br>
-        </p>
-        
-        <p class="story-caption">Since the duration of the project could be long, thus the user input will be accumulated much over time.<br>
-          LLM is used to compress the weekly updates and recording key pivots if exist.<br>
-          RAG is used to retrieve relevant information for the next week's planning.<br>
-        </p>
-        
       </article>
     </main>
+    <footer class="site-footer"><p>&copy; 2026 Yang Luo. All rights reserved.</p></footer>
   </body>
 </html>

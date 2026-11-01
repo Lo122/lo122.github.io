@@ -18,13 +18,15 @@
           <a class="back-link" href="../">
             <span>&lt; Integration</span>
           </a>
-          <h1 class="page-title">Towards Proactive HRC (WIP)</h1>
-          <p class="project-summary">What if a robot could not only understand which step the human is working on, but also provide assistance at the right moment?</p>
+          <h1 class="page-title">Towards Fluent Human-Robot Collaboration:<br><br>Proactive Robotic Assistance for Interior Construction Assembly</h1>
+          <p class="project-summary">What if a robot could not only understand which step the human is working on, but also proactively provide assistance at the right moment?</p>
           <dl class="project-facts">
             <dt>Year</dt>
             <dd>2026</dd>
             <dt>Role</dt>
             <dd>Researcher</dd>
+            <dt>Individual Contribution</dt>
+            <dd>System Architecture &amp; Implementation &middot; Model Training &amp; Optimization &middot; Communication Development &middot; Execution Testing &amp; Optimization &middot; User Study Design &amp; Execution</dd>
             <dt>Keywords</dt>
             <dd>Proactive HRC &middot; Intelligent Systems &middot; Human Action Recognition</dd>
           </dl>
@@ -41,26 +43,47 @@
       <article class="project-story">
         <img class="story-media" src="../../assets/integration/thesis-project/images/thesis_header.png" alt="Latent space exploration one">
         </div>
-        <p class="story-caption">Research aim and research question.</p>
+        <p class="story-caption">We aim to develop a proactive robot assistance system that can determine when to assist, what to propose, and how to communicate it during the collaborative ceiling assembly task.</p>
+        
+        <img class="story-media" src="../../assets/integration/thesis-project/images/proactiveHRC.png" alt="Latent space exploration two">
+        <p class="story-caption">Compare to existing reactive HRC, proactive HRC enables the robot to offer timely assistance before being asked, reducing coordination effort and supporting a more fluent workflow.</p>
+        
+        <img class="story-media" src="../../assets/integration/thesis-project/images/4 layer.png" alt="4 layer architecture">
+        <p class="story-caption">The proposed proactive HRC system consists of four main capabilities:</p>
+        <img class="story-media" src="../../assets/integration/thesis-project/images/workflow.png" alt="Workflow of the proactive HRC system">
+        <p class="story-caption">Recognition | Decision Making | Communication | Execution</p>
 
-        <p class="story-caption">The system design.</p>
+        <p class="story-caption">The recognition module is based on a LSTM model that takes in the human's temporal skeleton features and predicts the next action.</p>  
+        <img class="story-media" src="../../assets/integration/thesis-project/images/model_structure.png" alt="LSTM model structure">
 
-        <p class="story-caption">The system design - Human Action Recognition Model</p>
-        <p class="story-caption">The system design - Decision Making</p>
-        <p class="story-caption">The system design - Human-Robot Communication</p>
-        <p class="story-caption">The system design - Robot Execution</p>
-        <p class="story-caption">The system design - Result</p>
-        </div>
-              <footer class="project-credits">
+
+        <p class="story-caption">3 models with different architectures and configurations were evaluated.</p>
+        <img class="story-media" src="../../assets/integration/thesis-project/images/model comparison.png" alt="model comparison"> 
+
+        <img class="story-media" src="../../assets/integration/thesis-project/images/recog.png" alt="Recognition result">
+
+        <p class="story-caption">The communication module consists of two parts: before execution and during execution.</p>
+
+        <img class="story-media" src="../../assets/integration/thesis-project/images/communication before.png" alt="Communication before">
+        <img class="story-media" src="../../assets/integration/thesis-project/images/communication during.png" alt="Communication during">
+
+        <p class="story-caption">Two example cases of communication between the human and the robot via speech are shown below:</p>
+        <img class="story-media" src="../../assets/integration/thesis-project/images/communication1.png" alt="case 1">
+        <img class="story-media" src="../../assets/integration/thesis-project/images/communication2.png" alt="case 2">
+
+
+
+        <footer class="project-credits">
           <dl>
             <dt>Team</dt>
-            <dd>Yang Luo, Masaki Tetsu, Benan Ataulusoy</dd>
+            <dd>Benan Ataulusoy, Yang Luo, Masaki Tetsu</dd>
             <dt>Thesis Advisor</dt>
             <dd>Gili Ron, M.Arch, B.Arch (ICD/CA), Xiliu Yang, M.Sc, B.A. (ICD)</dd>
             <dt>Supervisor</dt>
-            <dd>Prof. AA Dipl.(Hons.) Arch. Achim Menges (ICD), Prof. Dr. Thomas Wortmann (ICD/CA),<br> Prof. Dr.-Ing. Jan Knippers (ITKE)</dd>
+            <dd>Prof. AA Dipl.(Hons.) Arch. Achim Menges (ICD), Prof. Dr. Thomas Wortmann (ICD/CA)</dd>
           </dl>
         </footer></article>
     </main>
+    <footer class="site-footer"><p>&copy; 2026 Yang Luo. All rights reserved.</p></footer>
   </body>
 </html>

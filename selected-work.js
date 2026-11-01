@@ -1,9 +1,10 @@
 const selectedWorkImages = [
   {
-    src: "./assets/integration/thesis-project/images/thesis_concept.png",
+    src: "./assets/integration/thesis-project/images/thesis_main.png",
     alt: "Towards Proactive HRC thesis project concept",
     href: "./integration/thesis-project/",
   },
+
   {
     src: "./assets/integration/gen-garden/images/gen_main.jpg",
     alt: "Gen Garden physical installation",
@@ -15,11 +16,19 @@ const selectedWorkImages = [
     alt: "Fermat Fulfilling Path continuous filling paths",
     href: "./design/fermat/",
   },
+
   {
     src: "./assets/integration/cvae-truss-morphologies/images/truss_main.jpg",
     alt: "CVAE-generated truss morphologies",
     href: "./integration/cvae-truss-morphologies/",
   },
+
+  {
+    src: "./assets/integration/thesis-project/images/thesis_main2.png",
+    alt: "Towards Proactive HRC thesis project concept",
+    href: "./integration/thesis-project/",
+  },  
+
   {
     src: "./assets/integration/light-sculpture/images/light_main.jpg",
     alt: "Interactive light sculpture",
@@ -27,6 +36,11 @@ const selectedWorkImages = [
   },
   {
     src: "./assets/integration/fabrication-studies/images/wave/wave_main.jpg",
+    alt: "Robotic fabrication study",
+    href: "./integration/fabrication-studies/",
+  },
+  {
+    src: "./assets/integration/fabrication-studies/images/3d metal printing/metal.jpg",
     alt: "Robotic fabrication study",
     href: "./integration/fabrication-studies/",
   },
