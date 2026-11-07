@@ -1,2 +1,2 @@
-# Keep original photography exports local; the site uses optimized WebP files.
-/assets/personal/photography/*.png
+# Keep original image exports local; the site uses optimized WebP files.
+/assets/**/*.png

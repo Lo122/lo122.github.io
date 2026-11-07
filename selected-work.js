@@ -1,6 +1,6 @@
 const selectedWorkImages = [
   {
-    src: "./assets/integration/thesis-project/images/thesis_main.png",
+    src: "./assets/integration/thesis-project/images/thesis_main.webp",
     alt: "Towards Proactive HRC thesis project concept",
     href: "./integration/thesis-project/",
   },
@@ -24,7 +24,7 @@ const selectedWorkImages = [
   },
 
   {
-    src: "./assets/integration/thesis-project/images/thesis_main2.png",
+    src: "./assets/integration/thesis-project/images/thesis_main2.webp",
     alt: "Towards Proactive HRC thesis project concept",
     href: "./integration/thesis-project/",
   },  
